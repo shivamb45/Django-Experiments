@@ -3,5 +3,5 @@ from app.models import GenericUser
 
 class GenericForm(forms.ModelForm):
     class Meta:
-        model = GenericUser()
+        model = GenericUser
         exclude = ['created_on']
