@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Display Page</title>
+  </head>
+  <body>
+    <h1>Form Display / submit Page</h1>
+    <p> {{ msg }} </p>
+    {% if form %}
+    <form method="post">
+      {{ form }}
+      <button type="submit" name="button">Submit</button>
+    </form>
+    {% endif %}
+    {% if db %}
+    <p> {{ db.name }} with email {{ db.email }} has been registered on {{ db.created_on }} .</p>
+    {% endif %}
+  </body>
+</html>
