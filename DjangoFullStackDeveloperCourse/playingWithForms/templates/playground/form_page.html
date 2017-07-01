@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forms Displaying Page</title>
+  </head>
+  <body>
+    <h1> Forms Displaying Page </h1>
+    <form method="POST">
+        {{ forms_object.as_p }}
+        {% csrf_token %}
+        <button type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>
