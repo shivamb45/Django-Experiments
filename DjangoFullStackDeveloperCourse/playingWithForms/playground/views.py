@@ -16,4 +16,6 @@ def form_page(req):
         if formData.is_valid():
             print("Validated")
             print("Name - {}\nemail -{}\ntext-{}\n".format(formData.cleaned_data['name'],formData.cleaned_data['email'],formData.cleaned_data['text']))
+        else:
+            print("VAlidation Failed")
     return render(req,'playground/form_page.html',{'forms_object':formObj})
