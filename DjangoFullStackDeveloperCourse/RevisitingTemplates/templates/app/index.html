@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block body_block %}
+<div class="jumbotron">
+  <h1>Welcome to Index</h1>
+  <p> This app explores more into templates, such as Relative URLS, ways a URL can be referred, better and future-proof practice, Template Inheritance etc.</p>
+
+  <a href="{% url 'app:otherKaPage' %}" class="btn btn-default">Other</a>
+  <a href="{% url 'app:relativeKaPage' %}" class="btn btn-default">Relative</a>
+</div>
+{% endblock %}
