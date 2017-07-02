@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block body_block %}
+{% load my_custom_tags %}
+<div class="jumbotron">
+  <h1>{{ heading | cutV2:'text' }}</h1>
+  <p> This is example of template inheritance. Today is {{p}} </p>
+  <p>{{ someNumber | add:10101 }}</p>
+  <p>Individual Words that makeup the heading are {{ heading | splitItBy:' ' }} </p>
+  <a href="{% url 'index' %}" class="btn btn-default">IndexPage</a>
+  <a href="{% url 'admin:index' %}" class="btn btn-default">AdminIndex</a>
+</div>
+{% endblock %}
