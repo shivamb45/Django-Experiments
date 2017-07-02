@@ -10,3 +10,8 @@ def other(req):
 
 def relative_url_templates(req):
     return render(req,'app/relative_url_templates.html',{'title':'Relative Ka Paege'})
+
+def filterPage(req):
+    import datetime
+    contextVar = {'heading':"the heading text",'p':datetime.datetime.now(),'someNumber':123456}
+    return render(req,'app/filter.html',context=contextVar)

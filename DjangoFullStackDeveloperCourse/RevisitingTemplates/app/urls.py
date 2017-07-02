@@ -12,5 +12,6 @@ app_name = 'app'
 
 urlpatterns = [
 url(r'^other/$',views.other,name="otherKaPage"),
-url(r'^relative/$',views.relative_url_templates,name="relativeKaPage")
+url(r'^relative/$',views.relative_url_templates,name="relativeKaPage"),
+url(r'^filter/$',views.filterPage,name="filterKaPage")
 ]
