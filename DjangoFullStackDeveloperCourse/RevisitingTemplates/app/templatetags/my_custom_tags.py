@@ -13,3 +13,11 @@ def cutversion2(value,arg):
 
 #register the filter and specify the calling name and calling function name
 register.filter('cutV2',cutversion2)
+
+@register.filter(name='splitItBy')
+def forDecoratorsSake(value,arg):
+    """
+    This is actually a dummy function | filter just to use and try Decorator
+    """
+
+    return value.split(arg)
