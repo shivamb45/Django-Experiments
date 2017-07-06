@@ -1,0 +1,29 @@
+{% extends 'app/app_base.html' %}
+{% block body_block %}
+<div class="container">
+  <div class="well">
+
+      <div class="panel panel-success">
+        <div class="panel-heading">{{school_detail.name}}</div>
+        <div class="panel-body">
+          Location : {{school_detail.location}}<br />
+          Principal : {{school_detail.principal}}
+        </div>
+      </div>
+
+</div>
+<div class="well-lg">
+  <ul class="list-group">
+      {% for student in school_detail.studentOf.all %}
+  <li class="list-group-item">
+    <span class="badge">Age: {{student.age}}</span>
+    {{student.name}}
+  </li>
+    {% endfor %}
+</ul>
+
+
+
+</div>
+</div>
+{% endblock %}
