@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+
+{% block title %} Login | {% endblock %}
+
+{% block HeaderHeadingBlock %} Login {% endblock %}
+{% block HeaderSubHeadingBlock %} fillin credentials for loging in{% endblock %}
+
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    {% if form.errors %}
+    <p> Please try again </p>
+
+    {% endif %}
+
+    <form class=""  action="{% url 'loginPage' %}" method="POST">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+      <input type="hidden" name="next" value="{{next}}">
+      <button type="submit" class="btn btn-primary">submit</button>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

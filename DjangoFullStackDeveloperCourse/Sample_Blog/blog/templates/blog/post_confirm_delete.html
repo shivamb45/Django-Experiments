@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} confirm action | {% endblock %}
+
+{% block HeaderHeadingBlock %}??{% endblock %}
+{% block HeaderSubHeadingBlock %}are u gonna kill ur innerself?{% endblock %}
+
+{% block body_block %}
+<div class="container">
+  <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <form class=""  method="POST">
+                {% csrf_token %}
+                <p>Are you sure to delete {{object}} ??</p>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

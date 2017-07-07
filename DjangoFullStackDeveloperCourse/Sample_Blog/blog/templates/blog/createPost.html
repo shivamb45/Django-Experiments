@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Post | {% endblock %}
+
+{% block HeaderHeadingBlock %}Create New Post{% endblock %}
+
+{% block body_block %}
+<div class="container">
+  <form class="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" >Save</button>
+  </form>
+  <script type="text/javascript">
+    var editor = new MediumEditor('.editable');
+  </script>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Comment Form | {% endblock %}
+
+{% block HeaderHeadingBlock %}  Create Comment{% endblock %}
+{% block HeaderSubHeadingBlock %} duniya ka kaam h kehna {% endblock %}
+
+{% block body_block %}
+<div class="container">
+  <h2>Posting a Comment </h2>
+  <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <form class=""  method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p>nikal li bhadaas ?</p>
+                <button type="submit" class="btn btn-info">ok</button>
+              </form>
+              <script type="text/javascript">
+                var editor = new MediumEditor('.editable');
+              </script>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

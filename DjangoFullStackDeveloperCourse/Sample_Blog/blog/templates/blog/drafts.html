@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Drafts | {% endblock %}
+
+{% block HeaderHeadingBlock %}Drafts {% endblock %}
+{% block HeaderSubHeadingBlock %}all the unpublished ideas{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+              {% if drafts_list %}
+              <h1>List of Posts</h1>
+              {% for post in drafts_list %}
+              <div class="post-preview">
+                             <a href="{% url 'post_detail' pk=post.pk %}">
+                                 <h2 class="post-title">
+                                     {{post.title|title}}
+                                 </h2>
+                                 <h3 class="post-subtitle">
+                                     {{post.text|truncatechars:20|safe}}
+                                 </h3>
+                             </a>
+                             <p class="post-meta">Created by <a href="#">{{post.author|capfirst}}</a> on {{post.create_date|date:"SHORT_DATE_FORMAT"}}</p>
+                             <!-- <p class="post-meta">Comments: {{post.approved_comments.count}}</p> -->
+                         </div>
+              {% endfor %}
+              {% else %}
+              <h2 class="alert alert-info"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> No Posts to display </h2>
+
+              {% endif %}
+
+            </div>
+          </div>
+
+</div>
+
+{% endblock %}
